@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="ISO-8859-1">
+<title>Add new Food Item</title>
+</head>
+<body>
+	<form th:object="${newFoodItem}" th:action="@{/update/{id}(id=${newFoodItem.id})}" method=POST>
+		Name: <input name="name" size="20" th:field="*{name}"><br/>
+		Package/Item Size: <input name="size" size="20" th:field="*{size}"><br/>
+		Quantity: <input name="quantity" size="20" th:field="*{quantity}"><br/>
+		<input name="submit" type="submit" value="submit"/>
+	</form>
+	<a href="../viewAll">View All Items</a>
+</body>
+</html>
